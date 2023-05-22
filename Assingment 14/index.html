@@ -35,7 +35,7 @@
         <div class="row4">
             <button class="num" value="." onclick="appendToResult('.')">.</button>
             <button class="num" value="0" onclick="appendToResult('0')">0</button>
-            <button class="symbol" id="del"><img src="image 1.png" alt="" ></button>
+            <button class="symbol" id="del" onclick="Delete()"><img src="image 1.png" alt="" ></button>
             <button class="equal" id="Result" onclick="calculate()">=</button>
         </div>
 
@@ -45,10 +45,18 @@
         document.getElementById("inp").value += value
     }
     function clearALL(){
-        document.getElementById("inp").value= ''
-    }
+        document.getElementById('inp').value= ''
+   }
+   function Delete(){
+    let del= document.getElementById('inp').value;
+    document.getElementById('inp').value= del.slice(0,-1)
+   }
     function calculate(){
-        document.getElementById("Result").value= Result
+        const result = eval(document.getElementById('inp').value);
+      document.getElementById('inp').value = result;   
+    }
+    function findPcntg(Num1,Num2){
+        let str= document.getElementById('inp').value
     }
   </script>
 
